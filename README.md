@@ -1,4 +1,4 @@
-# SITF (Structured Image Text Format)
+# SITF (Simple Image Text Format)
 
 SITF is a compact and human-readable text format for storing image pixel data using structured syntax rules.
 
