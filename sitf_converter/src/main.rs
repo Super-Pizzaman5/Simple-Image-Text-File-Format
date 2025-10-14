@@ -177,24 +177,45 @@ fn sitf_to_png(input: &str, output: &str) -> Result<(), Box<dyn std::error::Erro
     Ok(())
 }
 
+mod view;
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args: Vec<String> = env::args().collect();
-    if args.len() < 4 {
-        eprintln!("Usage:\n  {} to-sitf <input.png> <output.sitf> [metadata]\n  {} to-png <input.sitf> <output.png>", args[0], args[0]);
+
+    if args.len() < 3 {
+        eprintln!(
+            "Usage:\n  {} to-sitf <input.png> <output.sitf> [metadata]\n  {} to-png <input.sitf> <output.png>\n  {} view <input.sitf>",
+            args[0], args[0], args[0]
+        );
         std::process::exit(1);
     }
 
     match args[1].as_str() {
         "to-sitf" => {
+            if args.len() < 4 {
+                eprintln!("Usage: {} to-sitf <input.png> <output.sitf> [metadata]", args[0]);
+                std::process::exit(1);
+            }
             let metadata = if args.len() > 4 { &args[4] } else { "" };
             png_to_sitf(&args[2], &args[3], metadata)?
         }
-        "to-png" => sitf_to_png(&args[2], &args[3])?,
+        "to-png" => {
+            if args.len() < 4 {
+                eprintln!("Usage: {} to-png <input.sitf> <output.png>", args[0]);
+                std::process::exit(1);
+            }
+            sitf_to_png(&args[2], &args[3])?
+        }
+        "view" => {
+            // Call the new function
+            view::view_sitf(&args[2]);
+        }
         _ => {
-            eprintln!("Unknown mode: {}. Use 'to-sitf' or 'to-png'.", args[1]);
+            eprintln!("Unknown mode: {}. Use 'to-sitf', 'to-png', or 'view'.", args[1]);
             std::process::exit(1);
         }
     }
 
     Ok(())
 }
+
