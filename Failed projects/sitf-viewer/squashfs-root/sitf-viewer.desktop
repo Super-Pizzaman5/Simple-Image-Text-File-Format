@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=SITF Viewer
+Comment=Display SITF files in the terminal
+Exec=sitf-viewer %f
+Icon=icon
+Terminal=true
+Categories=Utility;

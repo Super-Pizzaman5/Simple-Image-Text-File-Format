@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/Extension
+X-KDE-Library=sitf_importer
+X-KDE-PluginInfo-Author=Nate
+X-KDE-PluginInfo-Email=nate@example.com
+X-KDE-PluginInfo-Name=sitf_importer
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=https://example.com
+X-KDE-PluginInfo-Category=File Import
+X-KDE-PluginInfo-EnabledByDefault=true
+Name=SITF Importer
+Comment=Import custom SITF image files
