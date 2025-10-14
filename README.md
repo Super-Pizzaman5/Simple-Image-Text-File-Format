@@ -16,7 +16,7 @@ Each SITF file consists of **metadata** and **pixel data**.
 
 Example:
 ```
-$Author:Nate, Date:2025-10-14@
+$Author:Name, Date:2025-10-14@
 ```
 
 ---
@@ -31,8 +31,8 @@ Each line (row of pixels) ends with a semicolon (`;`).
 X:Y+VALUE
 ```
 
-- `X` = horizontal coordinate (starting from 1)
-- `Y` = vertical coordinate (starting from 1)
+- `X` = horizontal coordiName (starting from 1)
+- `Y` = vertical coordiName (starting from 1)
 - `+` indicates full opacity
 - `-N` indicates partial transparency (where `N` is the transparency percentage, e.g., `-50` = 50% transparent)
 - `VALUE` defines the color or light value
@@ -77,7 +77,7 @@ Example:
 ### ✅ Example SITF File
 
 ```
-$Author:Nate,Date:2025-10-14,Description:Sample Rainbow Image@
+$Author:Name,Date:2025-10-14,Description:Sample Rainbow Image@
 1:1+!R,2:1+!G,3:1+!B;
 1:2+%1/2,2:2+%3/4,3:2+%1/1;
 88-100:100+!F;
@@ -87,7 +87,7 @@ $Author:Nate,Date:2025-10-14,Description:Sample Rainbow Image@
 
 ## 🧩 Notes
 
-- All coordinates start at **1,1** (top-left).
+- All coordiNames start at **1,1** (top-left).
 - Files should end with a semicolon to mark the final line.
 - Designed for compactness and human readability.
 - Intended for pixel-perfect image reconstruction.
