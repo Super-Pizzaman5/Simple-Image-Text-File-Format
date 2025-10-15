@@ -102,3 +102,6 @@ Run it using:
 ```bash
 cargo run -- input.png output.sitf
 ```
+or to view images
+```bash
+cargo run -- view image.sitf```
